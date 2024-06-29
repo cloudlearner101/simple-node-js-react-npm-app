@@ -1,10 +1,5 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:lts-buster-slim'
-            args '-p 3004:3004'
-        }
-    }
+    agent node-runner
     stages {
         stage('Install Dependencies') {
             steps {
