@@ -2,9 +2,6 @@ pipeline {
     agent {
         label 'node-runner'
     }
-    environment {
-        JENKINS_URL = 'http://localhost:3000/'
-    }
     stages {
         stage('Install Dependencies') {
             steps {
