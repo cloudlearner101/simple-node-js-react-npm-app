@@ -1,5 +1,5 @@
 pipeline {
-    agent node-runner
+    agent { label 'node-runner' }
     stages {
         stage('Install Dependencies') {
             steps {
