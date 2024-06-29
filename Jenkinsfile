@@ -3,24 +3,28 @@ pipeline {
         label 'node-runner'
     }
     options {
-            jenkins {
-                url 'http://localhost:3000/'
-            }
+        jenkinsUrl('http://localhost:3000/')
     }
     stages {
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                script {
+                    sh 'npm install'
+                }
             }
         }
         stage('Build') {
             steps {
-                sh 'npm run build'
+                script {
+                    sh 'npm run build'
+                }
             }
         }
         stage('Serve') {
             steps {
-                sh 'npm start -- --port 3004'
+                script {
+                    sh 'npm start -- --port 3004'
+                }
             }
         }
     }
