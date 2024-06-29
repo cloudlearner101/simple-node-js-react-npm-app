@@ -1,25 +1,21 @@
 pipeline {
-    agent { label 'node-runner' }
+    agent {
+        label 'node-runner'
+    }
     stages {
         stage('Install Dependencies') {
             steps {
-                script {
-                    sh 'npm install'
-                }
+                sh 'npm install'
             }
         }
         stage('Build') {
             steps {
-                script {
-                    sh 'npm run build'
-                }
+                sh 'npm run build'
             }
         }
         stage('Serve') {
             steps {
-                script {
-                    sh 'npm start -- --port 3004'
-                }
+                sh 'npm start -- --port 3004'
             }
         }
     }
