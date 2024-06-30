@@ -6,6 +6,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 script {
+                    sh 'apk add --no-cache npm'
                     sh 'npm install'
                 }
             }
